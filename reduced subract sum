@@ -1,0 +1,28 @@
+import java.util.*;
+class sample2{
+    static String func(String s)
+    {
+        int l = s.length();
+        int j,i;
+        int arr[]=new int[l];
+        for( i=0;i<l;i++)
+        {
+            arr[i]=Character.getNumericValue(s.charAt(i));
+        }
+        for(i=0;i<l-2;i++)
+        {
+            for(j=0;j<l-i-1;j++)
+            {
+                int a = arr[j]-arr[j+1];
+                arr[j]=Math.abs(a);
+            }
+        }
+        String s3=String.valueOf(arr[0])+String.valueOf(arr[1]);
+        return s3;
+    }
+     public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String  s1 = sc.nextLine();
+        System.out.println(func(s1));
+    }
+}
