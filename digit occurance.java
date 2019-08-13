@@ -18,45 +18,14 @@ j=j+1;
 temp=temp/10;
 }
 }
-int temp1,k;
+int co[] = new int[] {0,0,0,0,0,0,0,0,0,0};
 for(i=0;i<j;i++)
 {
-for(k=i+1;k<j;k++)
-{
-if(arr1[i]<arr1[k])
-{
-temp1=arr1[i];
-arr1[i]=arr1[k];
-arr1[k]=temp1;
+co[arr1[i]]=co[arr1[i]]+1;
 }
-}
-}
-
-int visit=-1;
-int co[]=new int[50];
-for(i=0;i<j;i++)
+for(i=0;i<co.length;i++)
 {
-int count=1;
-for(k=i+1;k<j;k++)
-{
-if(arr1[i]==arr1[k])
-{
-  co[k]=visit;
-count++;
-}
-}
-if(co[i]!=visit)
-{
-co[i]=count;
-}
-}
-
- for(i=j-1;i>=0;i--)
-{
-if(co[i]!=visit)
-{
-System.out.println(arr1[i]+"||"+co[i]);
-}
+System.out.println(i+""+"Occurs " + co[i] +" times");
 }
 }
 }
