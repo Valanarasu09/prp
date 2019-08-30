@@ -1,5 +1,31 @@
 import java.util.Scanner;
-class Uid{
+public class Main{
+static String sortstring(String s1, String s2)
+{
+    String small="";
+    String large="";
+    
+    for(int i=0;i<s1.length();i++)
+    {
+        
+        int a=Character.toLowerCase(s1.charAt(i));
+        int b=Character.toLowerCase(s2.charAt(i));
+        if(a<b){
+            small+=s1;
+            large+=s2;
+            break;
+        }
+        else if (b<a){
+            small+=s2;
+            large+=s1;
+            break;
+        }
+    }
+    
+    String res=toggle(small.charAt(0)+large);
+    
+    return res;
+}
 static String toggle(String s)
 {
 String s1="";
@@ -36,10 +62,14 @@ if(s1len>s2len)
 s3=s3+s1.substring(0,1)+s2+c+c1;
 System.out.println(toggle(s3));
 }
-else
+else if(s1len<s2len)
 {
 s3=s3+s2.substring(0,1)+s1+c+c1;
 System.out.println(toggle(s3));
+}
+else{
+    String ares= sortstring(s1,s2)+c+c1;
+    System.out.println(ares);
 }
 }
 }
