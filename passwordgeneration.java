@@ -22,7 +22,7 @@ static String sortstring(String s1, String s2)
         }
     }
     
-    String res=toggle(small.charAt(0)+large);
+    String res=toggle(large.charAt(0)+small);
     
     return res;
 }
