@@ -1,0 +1,56 @@
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args) {
+        int arr[]=new int[]{5,2,3,11,8,4,2,10};
+        int m,k=0,l=0,v=0;
+        int count[] = new int[10];
+        int pos[] = new int[10];
+        for(int i=0;i<arr.length-1;i++)
+        {
+            m=0;
+            for(int j=i+1;j<arr.length-1;j++)
+            {
+                if(arr[i]>arr[j])
+                {
+                    i++;
+                    m=m+1;
+                }
+                else{
+                    break;
+                }
+            }
+            if(m>=1)
+            {
+                count[l]=m;
+                pos[v]=i;
+                l++;
+                v++;
+            }
+        }
+        System.out.println("The total number of the sequence "+l);
+        int c=0;
+        int max1=0,ind=0;
+        for(int i=0;i<l;i++)
+        {
+            if(count[i]>max1)
+            {
+                max1=count[i];
+                ind=i;
+                }
+           
+        }
+        System.out.println("large sequence count "+(max1+1));
+        int sum=0;
+        System.out.println("the elements are: ");
+        for(int i=pos[ind]-max1;i<=pos[ind];i++)
+        {
+            System.out.println(arr[i]);
+            sum=sum+arr[i];
+    }
+   
+    System.out.println("The sum of the large sequence "+sum);
+    }
+}
+
+
