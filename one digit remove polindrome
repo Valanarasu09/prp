@@ -1,0 +1,61 @@
+# prp
+import java.util.Scanner;
+public class Main
+{
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+int n =sc.nextInt();
+int f=0;
+int m;
+String s2="";
+String s = Integer.toString(n);
+StringBuffer sbf = new StringBuffer(s);
+String s3 = sbf.reverse()+"";
+s3.trim();
+for(int i=0;i<s.length();i++)
+{
+   if(s.charAt(i)==(s.charAt(s.length()-1-i)))
+   {
+       f=f+1;
+   }
+   else 
+   {
+       if(s.charAt(i)!=(s.charAt(s.length()-1-i)))
+       {
+           s2=s2+s.substring(0,i);
+           s2=s2+s.substring(i+1);
+           if(pali(s2)==1)
+           {
+               System.out.println(s.charAt(i));
+               break;
+           }
+           else{
+               System.out.println(s3.charAt(i));
+               break;
+           }
+       }
+   }
+}
+if(f==s.length())
+{
+   System.out.println(-1);
+}
+
+}
+static int pali(String s)
+{
+    int n=0;
+    for(int i=0;i<s.length();i++)
+    {
+        if(s.charAt(i)==s.charAt(s.length()-i-1))
+        {
+          n=n+1;
+        }
+    }
+    if(n==s.length())
+        return 1;
+    else
+        return 0;
+}
+
+}
