@@ -1,0 +1,26 @@
+# prp
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int num1 = sc.nextInt();
+    int num2 = sc.nextInt();
+    int num3 = sc.nextInt();
+    System.out.println(sortnumber(num1,num2,num3));
+	}
+	static int sortnumber(int n1,int n2,int n3)
+	{
+	    int val1 = funct(n1);
+	    int val2 = funct(n2);
+	    int val3 = funct(n3);
+	    return (val1+val2+val3);
+	}
+	static int funct(int num){
+	    String s = Integer.toString(num);
+	    char ar[] = s.toCharArray();
+	    Arrays.sort(ar);
+	    int dig =Integer.parseInt(ar[ar.length-1]+""+ar[ar.length-2]+""+ar[ar.length-3]);
+	    return dig;
+	}
+}
